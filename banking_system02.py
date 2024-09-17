@@ -16,7 +16,8 @@ def menu():
 def depositar(saldo, valor, extrato, /):
     if valor > 0:
         saldo += valor
-        extrato += f"## Depósito realizado com sucesso! ##"
+        extrato += f"Depósito:\tR$ {valor:.2f}\n"
+        print("## Depósito realizado com sucesso! ##")
     else:
         print("\nOperação não realizada!! Valor informado é inválido")
     return saldo, extrato
@@ -84,7 +85,8 @@ def listar_contas(contas):
             Titular:\t{conta['usuario']['nome']}
             '''
         print("="*100)
-        print(linha)
+        print(f'{linha}\n')
+        print("="*100)
 def main():
     LIMITE_SAQUES = 3
     AGENCIA = "0001"
